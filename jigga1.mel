@@ -4,6 +4,7 @@ rename "pCube1" "row01";
 //shaping the cube
 scale -r 3 1 1;
 move -r 1 1 1; 
+//duplicating the piece to make row of three 
 
 
 
