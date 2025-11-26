@@ -5,6 +5,32 @@ rename "pCube1" "row01";
 scale -r 3 1 1;
 move -r 1 1 1; 
 //duplicating the piece to make row of three 
+//making second piece
+duplicate -rr;
+rename "a1" "b";
+move -r 1 1 1;
+//making third piece
+duplicate -rr;
+rename "a2" "c"
+move -r 1 1 1;
+//now grouping the pieces together
+select -cl  ;
+select -r a ;
+select -tgl b ;
+select -tgl c ;
+doGroup;
+//renaming group1 to row 1
+rename "group1" "row01";
+//now making 10 rows
+duplicate -rr;
+rotate -r -os -fo 0 90 0 ;
+move -r -0.483 1.474 2.6;
+//now duplicating new row to apply rules of jigga
+//row3
+duplicate -rr;
+move -r 0 2.11 0;
+//row 4
+
 
 
 
