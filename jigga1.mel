@@ -1,0 +1,11 @@
+//CREATING A CUBE AND SHAPING INTO ONE PIECE
+polyCube; 
+rename "pCube1" "row01";
+//shaping the cube
+scale -r 3 1 1;
+move -r 1 1 1; 
+
+
+
+
+
