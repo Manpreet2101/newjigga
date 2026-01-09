@@ -30,6 +30,63 @@ move -r -0.483 1.474 2.6;
 duplicate -rr;
 move -r 0 2.11 0;
 //row 4
+duplicate -rr;
+move -r 0 3.147 0;
+//row 5
+duplicate -rr;
+move -r 0 4.181 0;
+//row 6
+duplicate -rr;
+move -r 0 5.202 0;
+//row 7
+duplicate -rr;
+move -r 0 6.29 0;
+//row 8
+duplicate -rr;
+move -r 0 7.339 0;
+//row 9
+duplicate -rr;
+move -r 0 8.398 0;
+//row 10
+duplicate -rr;
+move -r 0 9.456 0;
+// ===== Random Piece Mover for Your Tower =====
+
+global proc moveRandomPiece()
+{
+    // Random row (1 - 10)
+    int $row = rand(1, 11);
+
+    // Convert number to row name (01, 02, ... 10)
+    string $rowStr = "";
+    if ($row < 10)
+        $rowStr = ("row0" + $row);
+    else
+        $rowStr = ("row" + $row);
+
+    // Random piece a / b / c
+    string $letters[] = {"a","b","c"};
+    int $i = int(rand(0,3));
+    string $piece = $letters[$i];
+
+    // Full object path like: row03|b
+    string $target = ($rowStr + "|" + $piece);
+
+    if (`objExists $target`)
+    {
+        // New random location outside the tower
+        float $x = rand(20, 60);
+        float $y = rand(0, 20);
+        float $z = rand(20, 60);
+
+        move $x $y $z $target;
+        print ("Moved: " + $target + " to new position.\n");
+    }
+    else
+    {
+        warning ("Cannot find: " + $target + "\n");
+    }
+}
 
 
 
